@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { UserStorage } from './contexts/UserContext';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,14 +13,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <UserStorage>
+          <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </div>
   );
