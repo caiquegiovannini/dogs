@@ -17,13 +17,13 @@ const Header = () => {
         </Link>
         {user
           ? (
-            <Link to="/conta" className="login">
+            <Link to="/conta" className="login-link">
               {user.nome}
               <button type="button" onClick={userLogout}>Sair</button>
             </Link>
           )
           : (
-            <Link to="/login" className="login">
+            <Link to="/login" className="login-link">
               Login | Criar
             </Link>
           )
